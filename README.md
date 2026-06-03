@@ -155,6 +155,50 @@ Quick Sort presenta un rendimiento inferior debido a la degradación del partici
 
 ---
 
+## Preguntas y Respuestas
+
+---
+
+### 1. ¿Qué algoritmo fue más rápido en el escenario desordenado?
+
+En el escenario donde los datos se encuentran completamente desordenados, el algoritmo **Quick Sort** presentó el mejor rendimiento en todos los tamaños de muestra evaluados.
+
+Este comportamiento se debe a que su estrategia de partición reduce recursivamente el problema en subarreglos más pequeños, logrando una complejidad promedio de O(n log n). En contraste, Insertion Sort presenta una complejidad cuadrática O(n²), lo que provoca un incremento significativo en el tiempo de ejecución conforme aumenta el tamaño del conjunto de datos.
+
+---
+
+### 2. ¿Qué algoritmo fue más rápido en el escenario casi ordenado?
+
+En el escenario casi ordenado, el algoritmo **Insertion Sort** evidenció un mejor desempeño en comparación con Quick Sort.
+
+Esto se debe a que Insertion Sort se adapta eficientemente a entradas parcialmente ordenadas, reduciendo el número de desplazamientos y comparaciones necesarias. En estas condiciones, su comportamiento se aproxima a O(n), lo que explica la mejora sustancial en sus tiempos de ejecución.
+
+---
+
+### 3. ¿El crecimiento del tamaño de muestra afectó por igual a los dos algoritmos?
+
+El incremento del tamaño de muestra no afectó de manera uniforme a ambos algoritmos.
+
+Insertion Sort presentó un crecimiento exponencial en el tiempo de ejecución debido a su complejidad cuadrática, mientras que Quick Sort mantuvo un crecimiento considerablemente más estable, acorde a su comportamiento promedio O(n log n). Esto evidencia una mayor escalabilidad de Quick Sort frente a grandes volúmenes de datos.
+
+---
+
+### 4. ¿Por qué Insertion Sort puede mejorar cuando el arreglo ya está casi ordenado?
+
+Insertion Sort mejora su rendimiento en escenarios casi ordenados debido a que los elementos ya se encuentran en posiciones cercanas a su ubicación final.
+
+Esto reduce significativamente la cantidad de comparaciones y desplazamientos requeridos, permitiendo que el algoritmo opere con un comportamiento cercano a lineal O(n), lo cual optimiza su desempeño en este tipo de entradas.
+
+---
+
+### 5. ¿Por qué Quick Sort suele ser mejor cuando los datos están muy desordenados?
+
+Quick Sort presenta un mejor rendimiento en datos altamente desordenados debido a su estrategia de división y conquista.
+
+El algoritmo selecciona un pivote y particiona el conjunto en subconjuntos más pequeños, lo que permite reducir progresivamente la complejidad del problema. En promedio, mantiene una complejidad O(n log n), lo que lo hace más eficiente para el manejo de grandes volúmenes de datos no estructurados.
+
+---
+
 # Conclusiones
 
 ## Conclusión 1
