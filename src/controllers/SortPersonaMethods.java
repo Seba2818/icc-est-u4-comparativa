@@ -4,40 +4,45 @@ import models.Persona;
 
 public class SortPersonaMethods {
 
-    public void insertionSort(Persona[] personas) {
-        for (int i = 1; i < personas.length; i++) {
-            Persona key = personas[i];
+    public void insertionSort(Persona[] a) {
+        for (int i = 1; i < a.length; i++) {
+            Persona key = a[i];
             int j = i - 1;
-            while (j >= 0 && personas[j].getCriterioOrdenamiento() > key.getCriterioOrdenamiento()) {
-                personas[j + 1] = personas[j];
+
+            while (j >= 0 && a[j].getCriterioOrdenamiento() > key.getCriterioOrdenamiento()) {
+                a[j + 1] = a[j];
                 j--;
             }
-            personas[j + 1] = key;
+
+            a[j + 1] = key;
         }
     }
 
-    public void quickSort(Persona[] personas, int low, int high) {
+    public void quickSort(Persona[] a, int low, int high) {
         if (low < high) {
-            int pi = partition(personas, low, high);
-            quickSort(personas, low, pi - 1);
-            quickSort(personas, pi + 1, high);
+            int p = partition(a, low, high);
+            quickSort(a, low, p - 1);
+            quickSort(a, p + 1, high);
         }
     }
 
-    public int partition(Persona[] personas, int low, int high) {
-        Persona pivot = personas[high];
+    private int partition(Persona[] a, int low, int high) {
+        Persona pivot = a[high];
         int i = low - 1;
+
         for (int j = low; j < high; j++) {
-            if (personas[j].getCriterioOrdenamiento() < pivot.getCriterioOrdenamiento()) {
+            if (a[j].getCriterioOrdenamiento() <= pivot.getCriterioOrdenamiento()) {
                 i++;
-                Persona temp = personas[i];
-                personas[i] = personas[j];
-                personas[j] = temp;
+                Persona tmp = a[i];
+                a[i] = a[j];
+                a[j] = tmp;
             }
         }
-        Persona temp = personas[i + 1];
-        personas[i + 1] = personas[high];
-        personas[high] = temp;
+
+        Persona tmp = a[i + 1];
+        a[i + 1] = a[high];
+        a[high] = tmp;
+
         return i + 1;
     }
 }
