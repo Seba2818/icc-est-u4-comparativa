@@ -105,29 +105,41 @@ Donde:
 
 # Resultados Obtenidos
 
-## Escenario 1: Arreglo completamente desordenado
+### Escenario 1: Arreglo completamente desordenado
 
-| Tamaño de muestra | Tiempo Inserción (ms) | Tiempo Quick Sort (ms) | Algoritmo más rápido |
-|------------------|----------------------:|-----------------------:|---------------------|
-| 10.000 | 3557.928 | 39.065 | Quick Sort |
-| 50.000 | 176376.177 | 549.759 | Quick Sort |
-| 100.000 | 1022627.716 | 590.569 | Quick Sort |
+| Tamaño de muestra | Insertion Sort (ms) | Quick Sort (ms) | Algoritmo más rápido |
+|------------------|---------------------|-----------------|----------------------|
+| 10.000 | 26.52 | 3.16 | Quick Sort |
+| 50.000 | 974.26 | 13.70 | Quick Sort |
+| 100.000 | 2942.23 | 53.08 | Quick Sort |
+
+---
+
+### Escenario 2: Arreglo casi ordenado (ordenado + 1 elemento fuera de lugar)
+
+| Tamaño de muestra | Insertion Sort (ms) | Quick Sort (ms) | Algoritmo más rápido |
+|------------------|---------------------|-----------------|----------------------|
+| 10.001 | 0.1073 | 0.7982 | Insertion Sort |
+| 50.001 | 0.2665 | 15.5555 | Insertion Sort |
+| 100.001 | 1.0149 | 55.9813 | Insertion Sort |
 
 ---
 
 # Análisis de Resultados
 
-## Muestra de 10.000 elementos
+### Escenario 1: Datos completamente desordenados
 
-Quick Sort obtuvo un tiempo de ejecución significativamente menor que Insertion Sort. La diferencia observada evidencia la ventaja de Quick Sort para conjuntos de datos medianos.
+En este escenario, Quick Sort presenta un mejor rendimiento en todos los tamaños de muestra evaluados.
 
-## Muestra de 50.000 elementos
+Insertion Sort muestra un crecimiento cuadrático en el tiempo de ejecución, lo que coincide con su complejidad O(n^2), lo que lo hace ineficiente para grandes volúmenes de datos.
 
-Al aumentar la cantidad de elementos, el tiempo de Insertion Sort creció considerablemente, mientras que Quick Sort mantuvo un rendimiento mucho más estable.
+---
 
-## Muestra de 100.000 elementos
+### Escenario 2: Datos casi ordenados
 
-La diferencia entre ambos algoritmos se volvió aún más evidente. Insertion Sort requirió un tiempo extremadamente alto en comparación con Quick Sort, confirmando las limitaciones de su complejidad cuadrática.
+En este escenario, Insertion Sort presenta un rendimiento significativamente mejor debido a que su complejidad mejora considerablemente cuando los datos están casi ordenados.
+
+Quick Sort presenta un rendimiento inferior debido a la degradación del particionado cuando el pivote no divide de forma equilibrada el arreglo.
 
 ---
 
