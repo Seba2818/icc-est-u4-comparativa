@@ -13,7 +13,8 @@ public class Resultado {
         this.escenario = escenario;
         this.sample = sample;
         this.tiempoNano = tiempoNano;
-        this.tiempoMilli = tiempoNano / 1_000_000.0;
+        this.tiempoMilli = tiempoNano / 1_000_000.0; 
+        
     }
 
     @Override
