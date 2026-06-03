@@ -3,7 +3,7 @@
 ### Nombre: Sebastian Muñoz
 ### Fecha: 02/06/2026
 ### Grupo: 1 
-###  Tutor: Pablo Torres
+### Tutor: Ing. Pablo Torres
 ---
 
 ## Descripción
