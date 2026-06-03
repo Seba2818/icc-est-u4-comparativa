@@ -161,8 +161,3 @@ Quick Sort mantuvo tiempos relativamente bajos incluso con 100.000 elementos, de
 
 La práctica permitió comprobar experimentalmente cómo la complejidad algorítmica influye directamente en el rendimiento de un programa y en la selección de la estrategia de ordenamiento más adecuada.
 
-
-
-# Autor
-
-**Sebastián Muñoz**
